@@ -19,12 +19,17 @@ from nltk.stem.wordnet import WordNetLemmatizer
 # from sklearn.preprocessing import LabelBinarizer
 # from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+nltk.download("stopwords")
+nltk.download("omw-1.4")
+nltk.download("wordnet")
+import os
 
+path = os.path.dirname(__file__)
 import pickle
 
-with open('tokenizer.pickle', 'rb') as handle:
+with open(path + 'tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
-with open('lemmatizer.pickle', 'rb') as handle:
+with open(path + 'lemmatizer.pickle', 'rb') as handle:
     lb = pickle.load(handle)
 
 def cleaning(text):
@@ -42,7 +47,7 @@ def cleaning(text):
 
     return ' '.join(sentence)
 
-model_lstm = tf.keras.models.load_model('./Model_LSTM/')
+model_lstm = tf.keras.models.load_model(path + '/Model_LSTM/')
 
 def lstm_prediction(text):
     clean_text = cleaning(text)
