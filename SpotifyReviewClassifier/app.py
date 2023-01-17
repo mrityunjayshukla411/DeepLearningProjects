@@ -27,9 +27,9 @@ import os
 path = os.path.dirname(__file__)
 import pickle
 
-with open(path + 'tokenizer.pickle', 'rb') as handle:
+with open(path + '/tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
-with open(path + 'lemmatizer.pickle', 'rb') as handle:
+with open(path + '/lemmatizer.pickle', 'rb') as handle:
     lb = pickle.load(handle)
 
 def cleaning(text):
