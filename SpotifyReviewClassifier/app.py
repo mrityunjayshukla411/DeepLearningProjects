@@ -11,7 +11,7 @@ import tensorflow as tf
 # from wordcloud import WordCloud
 
 # # Preprocessing and evaluation
-
+import nltk
 from nltk.corpus import stopwords
 # from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
